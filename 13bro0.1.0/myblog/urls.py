@@ -23,6 +23,9 @@ urlpatterns = [
     path('share/', views.share),
     path('list/', views.list),
     path('time/', views.time),
+    path('about/', views.about),
+    path('gbook/', views.gbook),
+    path('content/<int:no>', views.content),
     # path('mod', include('mod.urls', namespace='mod')),
     path('admin/', admin.site.urls)
 ]

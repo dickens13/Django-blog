@@ -9,15 +9,14 @@
     <div class="pagebg sh"></div>
     <div class="container">
         <h1 class="t_nav">
-            <span>个人的心情记录和随笔涂鸦之地。兴之所至，也许有几分清明。</span>
-            <a href="/" class="n1">胡言乱语</a>
+            <a href="/">个人的心情记录和随笔涂鸦之地。兴之所至，也许有几分清明。</a>
         </h1>
         <div class="share">
             <ul>
                 {% for art in h_art %}
                     <li>
                         <div class="shareli">
-                            <a href="/" target="_blank">
+                            <a href="/content/{{ art.id }}" target="_blank">
                                 <i><img src="/static/{{ art.picture }}"></i>
                                 <h2><b>{{ art.title }}</b></h2>
                                 <span>喜欢 | 190</span>

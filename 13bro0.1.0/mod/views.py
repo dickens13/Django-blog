@@ -24,3 +24,17 @@ def list(request):
 
 def time(request):
     return render(request, 'time.html')
+
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def gbook(request):
+    return render(request, 'gbook.html')
+
+
+def content(request, no):
+    art = Article.objects.get(pk=no)
+    posts = {'art': art}
+    return render(request, 'content.html', posts)

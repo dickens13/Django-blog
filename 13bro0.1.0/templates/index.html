@@ -20,7 +20,7 @@
                 {% for art in b_art %}
                     {% if forloop.counter < 10 %}
                         <li class="slide" >
-                            <a href="/" target="_blank">
+                            <a href="/content/{{ art.id }}" target="_blank">
                             <img src="/static/{{ art.picture }}">
                             <span class="imginfo">{{ art.title }}</span>
                             </a>
@@ -36,14 +36,14 @@
         </div>
         <div class="toppic">
             <li>
-                <a href="/" target="_blank">
+                <a href="/content/{{ h_art.0.id }}" target="_blank">
                     <i><img src="/static/{{ h_art.0.picture }}"></i>
                     <h2>{{ h_art.0.title }}</h2>
                     <span>胡言乱语</span>
                 </a>
             </li>
             <li>
-                <a href="/" target="_blank">
+                <a href="/content/{{ h_art.1.id }}" target="_blank">
                     <i><img src="/static/{{ h_art.1.picture }}"></i>
                     <h2>{{ h_art.1.title }}</h2>
                     <span>胡言乱语</span>
