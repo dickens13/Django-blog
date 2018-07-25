@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="个人博客,十三哥个人博客,十三哥,成都十三哥" />
-        <meta name="description" content="十三哥个人博客，十三哥个人原创网站。" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {% block title %}
-                十三哥个人博客 - 成都的十三哥
-            {% endblock %}
-        </title>
-        {% block extCSS %}
-            <link href="{% static 'css/base.css'%}" rel="stylesheet">
-            <link href="{% static 'css/index.css' %}" rel="stylesheet">
-            <link href="{% static 'css/m.css' %}" rel="stylesheet">
-        {% endblock %}
-        {% block extJS %}
-            <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
-            <script src="{% static 'js/jquery.easyfader.min.js' %}"></script>
-            <script src="{% static 'js/scrollReveal.js' %}"></script>
-            <script src="{% static 'js/common.js' %}"></script>
-            [if lt IE 9]
-            <script src="{% static 'js/modernizr.js' %}"></script>
-            [endif]
-        {% endblock %}
-    </head>
-    {% block indexbody %}
-    {% endblock %}
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="个人博客,十三哥个人博客,十三哥,成都十三哥" />
+    <meta name="description" content="十三哥个人博客，十三哥个人原创网站。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/base.css'%}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/m.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.easyfader.min.js' %}"></script>
+    <script src="{% static 'js/scrollReveal.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    [if lt IE 9]
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    [endif]
+</head>
+<body>
+    <header>
+{#        &nbsp#}
+        <!--menu begin-->
+        <div class="menu">
+            <nav class="nav" id="topnav">
+                <h1 class="logo"><a href="http://www.13bro.com">十三哥博客</a></h1>
+                <li><a href="/">网站首页</a> </li>
+                <li><a href="/share/">日常博客</a></li>
+                <li><a href="/list/">胡言乱语</a></li>
+                <li><a href="/time/">时间轴</a> </li>
+                <li><a href="/about/">关于我</a> </li>
+                <li><a href="/gbook/">留言板</a> </li>
+                <!--search begin-->
+                <div id="search_bar" class="search_bar">
+                    <form  id="searchform" action="" method="post" name="searchform">
+                        <input class="input" placeholder="想搜点什么呢..." type="text" name="keyboard" id="keyboard">
+                        <input type="hidden" name="show" value="title" />
+                        <input type="hidden" name="tempid" value="1" />
+                        <input type="hidden" name="tbname" value="news">
+                        <input type="hidden" name="Submit" value="搜索" />
+                        <span class="search_ico"></span>
+                    </form>
+                </div>
+                <!--search end-->
+            </nav>
+        </div>
+        <!--menu end-->
+        <!--mnav begin-->
+        <div id="mnav">
+            <h2><a href="http://www.13bro.com" class="mlogo">十三哥博客</a><span class="navicon"></span></h2>
+            <dl class="list_dl">
+                <dt class="list_dt"> <a href="">网站首页</a> </dt>
+                <dt class="list_dt"> <a href="/share/">个人博客</a> </dt>
+                <dt class="list_dt"> <a href="/list/">心情随笔</a> </dt>
+                <dt class="list_dt"> <a href="/time/">时间轴</a> </dt>
+                <dt class="list_dt"> <a href="/about/">关于我</a> </dt>
+                <dt class="list_dt"> <a href="/gbook/">留言</a> </dt>
+            </dl>
+        </div>
+        <!--mnav end-->
+    </header>
+{% block content %}
 
-    {% block content %}
-    {% endblock %}
-
-    {% block footer %}
-         <p>Design by <a href="http://www.13bro.com" target="_blank">十三哥博客</a> <a href="/">蜀ICP备18020635号</a></p>
-    {% endblock %}
-    <a href="#" class="cd-top">Top</a>
-    </body>
+{%  endblock %}
+<footer>
+    <p>Design by <a href="http://www.13bro.com" target="_blank">十三哥博客</a> <a href="/">蜀ICP备18020635号</a></p>
+    <hr>
+    <p class="email"><a href="/" target="_blank"><span>联系邮箱:</span>156879457@qq.com</a></p>
+</footer>
+</body>
 </html>

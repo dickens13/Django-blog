@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mod.models import User, Category, ChiCategory, Article
+from mod.models import User, Category, Article
 
 
 class ArtAdmin(admin.ModelAdmin):
@@ -12,5 +12,5 @@ class ArtAdmin(admin.ModelAdmin):
 admin.site.register(User)
 # admin.site.register(Tag)
 admin.site.register(Category)
-admin.site.register(ChiCategory)
+# admin.site.register(ChiCategory)
 admin.site.register(Article, ArtAdmin)

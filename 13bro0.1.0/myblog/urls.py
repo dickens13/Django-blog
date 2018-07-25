@@ -20,6 +20,9 @@ from mod import views
 
 urlpatterns = [
     path('', views.index),
+    path('share/', views.share),
+    path('list/', views.list),
+    path('time/', views.time),
     # path('mod', include('mod.urls', namespace='mod')),
     path('admin/', admin.site.urls)
 ]

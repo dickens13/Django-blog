@@ -38,19 +38,19 @@ class Category(models.Model):
         return self.name
 
 
-class ChiCategory(models.Model):
-    # id = models.AutoField(primary_key=True)
-    first_type = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='所属分类')
-    # 级联删除, 如果父表中的记录被删除，则子表中对应的记录自动被删除
-    name = models.CharField(verbose_name='子类名', max_length=64)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = '子类名'
-        verbose_name_plural = '子类列表'
-        db_table = 'chicategory'
+# class ChiCategory(models.Model):
+#     # id = models.AutoField(primary_key=True)
+#     first_type = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='所属分类')
+#     # 级联删除, 如果父表中的记录被删除，则子表中对应的记录自动被删除
+#     name = models.CharField(verbose_name='子类名', max_length=64)
+#
+#     def __str__(self):
+#         return self.name
+#
+#     class Meta:
+#         verbose_name = '子类名'
+#         verbose_name_plural = '子类列表'
+#         db_table = 'chicategory'
 
 
 class Article(models.Model):
@@ -66,9 +66,9 @@ class Article(models.Model):
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     pub_time = models.DateTimeField(verbose_name='发布时间', blank=True, null=True)
     last_mod_time = models.DateTimeField(verbose_name='修改时间', default=now)
-    picture = models.ImageField(verbose_name='图片', upload_to='static', blank=True)
-    chicategory = models.ForeignKey(ChiCategory, verbose_name='所属分类', on_delete=models.CASCADE, blank=False, null=False)
-    # tags = models.ManyToManyField(Tag, verbose_name='标签集', blank=True)
+    picture = models.ImageField(verbose_name='图片', upload_to='images', blank=True)
+    category = models.ForeignKey(Category, verbose_name='所属分类', on_delete=models.CASCADE,
+                                 default=None, blank=False, null=False)
 
     def __str__(self):
         return self.title
