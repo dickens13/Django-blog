@@ -21,44 +21,19 @@
             <li class="like">8888</li>
         </ul>
         </div>
-        <div class="news_about"><strong>简介</strong>个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</div>
+        <br>
+{#        <div class="news_about"><strong>简介</strong>个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</div>#}
         <div class="news_con">
             <img alt="" src="/static/{{ art.picture }}"><br>
             <br>
-            {{ art.content }}
+            {{ art.content|safe }}  <!--safe过滤器可以将样式效果加载出来-->
         </div>
     </div>
     <div class="share">
         <p class="diggit">
-            <a href="JavaScript:makeRequest"> 很赞哦！</a>(<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)</p>
-{#        <p class="dasbox"><a href="javascript:void(0)" onClick="dashangToggle()" class="dashang" title="打赏，支持一下">打赏本站</a></p>#}
-{#        <div class="hide_box"></div>#}
-{#        <div class="shang_box">#}
-{#            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">关闭</a>#}
-{#            <div class="shang_tit">#}
-{#                <p>感谢您的支持，我会继续努力的!</p>#}
-{#            </div>#}
-{#            <div class="shang_payimg"> <img src="images/alipayimg.jpg" alt="扫码支持" title="扫一扫"> </div>#}
-{#            <div class="pay_explain">扫码打赏，你说多少就多少</div>#}
-{#            <div class="shang_payselect">#}
-{#                <div class="pay_item checked" data-id="alipay"> <span class="radiobox"></span> <span class="pay_logo"><img src="images/alipay.jpg" alt="支付宝"></span> </div>#}
-{#                <div class="pay_item" data-id="weipay"> <span class="radiobox"></span> <span class="pay_logo"><img src="images/wechat.jpg" alt="微信"></span> </div>#}
-{#            </div>#}
-{#            <script type="text/javascript">#}
-{#                $(function(){#}
-{#                    $(".pay_item").click(function(){#}
-{#                        $(this).addClass('checked').siblings('.pay_item').removeClass('checked');#}
-{#                        var dataid=$(this).attr('data-id');#}
-{#                        $(".shang_payimg img").attr("src","images/"+dataid+"img.jpg");#}
-{#                        $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");#}
-{#                    });#}
-{#                });#}
-{#                function dashangToggle(){#}
-{#                    $(".hide_box").fadeToggle();#}
-{#                    $(".shang_box").fadeToggle();#}
-{#                }#}
-{#            </script>#}
-{#        </div>#}
+            <a href="JavaScript:makeRequest"> 很赞哦！</a>
+            (<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)
+        </p>
     </div>
     <div class="nextinfo">
       <p>上一篇：<a href="/news/life/2018-03-13/804.html">作为一个设计师,如果遭到质疑你是否能恪守自己的原则?</a></p>

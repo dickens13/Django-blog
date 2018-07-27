@@ -8,6 +8,15 @@ class ArtAdmin(admin.ModelAdmin):
                     'pub_time')
     search_fields = ('title', 'content')
 
+    class Media:
+        # 在管理后台的HTML文件中加入js文件，每一个路径都会追加STATIC_URL/
+        js = (
+            'js/kindeditor/kindeditor-all.js',
+            'js/kindeditor/kindeditor-all-min.js',
+            'js/kindeditor/lang/zh_CN.js',
+            'js/kindeditor/config.js',
+        )
+
 
 admin.site.register(User)
 # admin.site.register(Tag)
