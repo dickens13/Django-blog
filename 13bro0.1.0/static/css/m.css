@@ -46,7 +46,7 @@ article { width: 90%; margin: 70px auto 0 }
 h1.t_nav span { display: none }
 .timebox li { font-size: 15px }
 .timebox li span { margin-right: 30px }
-.timebox:before { left: 100px; }
+.timebox:before { left: 190px; }
 .timebox li a:after { left: -26px }
 .timebox li:hover a { padding: 0 30px }
 .infosbox { width: 100% }
@@ -78,7 +78,7 @@ h1.t_nav span { display: none }
 .share ul li h2 { padding: 15px 15px; }
 .timebox li { font-size: 15px }
 .timebox li span { display: none }
-.timebox:before { display: none }
+.timebox:before { display: none; left: 190px; }
 .timebox li:hover a { padding: 0 30px }
 .infosbox { width: 100% }
 .pagebg {margin-top: 50px;}
@@ -114,7 +114,7 @@ h1.t_nav span { display: none }
 footer p { padding: 0 30px }
 .timebox li { font-size: 15px }
 .timebox li span { display: none }
-.timebox:before { display: none }
+.timebox:before { display: none; left: 190px;}
 .timebox li:hover a { padding: 0 30px }
 .infosbox { width: 100% }
 .pagebg {margin-top: 50px;}

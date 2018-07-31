@@ -11,9 +11,6 @@
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
     <link href="{% static 'css/m.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/jquery.easyfader.min.js' %}"></script>
-    <script src="{% static 'js/scrollReveal.js' %}"></script>
-    <script src="{% static 'js/common.js' %}"></script>
 {#    [if lt IE 9]#}
 {#    <script src="{% static 'js/modernizr.js' %}"></script>#}
 {#    [endif]#}
@@ -65,11 +62,16 @@
     {% block content %}
 
     {%  endblock %}
-<footer>
-    <p>Design by <a href="http://www.13bro.com" target="_blank">十三哥博客</a> <a href="/">蜀ICP备18020635号</a></p>
-    <hr>
-    <p class="email"><a href="/" target="_blank"><span>联系邮箱:</span>156879457@qq.com</a></p>
-</footer>
-<a href="#" class="cd-top">Top</a>
+    <footer>
+        <!--target表示点击之后打开新页面-->
+        <p>Design by
+            <a href="http://www.13bro.com" target="_blank">十三哥博客</a>&nbsp;&nbsp;&nbsp;
+            <a href="/">蜀ICP备18020635号</a><a href="/" target="_blank">&nbsp;&nbsp;&nbsp;
+                <span>联系邮箱:</span>156879457@qq.com
+            </a>
+        </p>
+    </footer>
+    <!--返回按钮-->
+    <a href="#" class="cd-top">Top</a>
 </body>
 </html>

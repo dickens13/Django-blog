@@ -30,10 +30,12 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = '分类名'
-        verbose_name_plural = '分类列表'
+        verbose_name = '分类名'  # 指定后台显示模型名称
+        verbose_name_plural = '分类列表'  # 指定后台显示模型复数名称
+        # 数据库表名
         db_table = 'category'
 
+    # 使对象在后台显示更友好
     def __str__(self):
         return self.name
 
@@ -58,7 +60,7 @@ class Article(models.Model):
         ('d', '草稿'),
         ('p', '发表'),
     )
-    # id = models.AutoField(primary_key=True)
+    # id = models.AutoField(primary_key=True) 不设定主键则自动生成
     title = models.CharField(max_length=100, verbose_name='标题')
     content = models.TextField(verbose_name='正文', blank=True, null=True)
     status = models.CharField(verbose_name='状态', max_length=1, choices=STATUS_CHOICES, default='p')
@@ -69,9 +71,17 @@ class Article(models.Model):
     picture = models.ImageField(verbose_name='图片', upload_to='images', blank=True)
     category = models.ForeignKey(Category, verbose_name='所属分类', on_delete=models.CASCADE,
                                  default=None, blank=False, null=False)
+    # 设定一个点赞的字段，限定显示数量等
+    good_count = models.IntegerField(default=0, db_column='tgcount', verbose_name='点赞数')
 
     def __str__(self):
         return self.title
+
+    # 限定点赞最大数量
+    @property
+    def gcount(self):
+        return f'{self.good_count}' \
+            if self.good_count <= 999999 else '999999+'
 
     # 刷新浏览量
     def viewed(self):
@@ -85,7 +95,7 @@ class Article(models.Model):
         return Article.objects.filter(id__lt=self.id, status='p', pub_time__isnull=False).first()
 
     class Meta:
-        ordering = ['-pub_time']  # 按发布时间降序
+        ordering = ['-last_mod_time']  # 按修改时间降序
         verbose_name = '文章'  # 指定后台显示的模型名称
         verbose_name_plural = '文章列表'  # 指定后台显示模型负数名称
         db_table = 'article'  # 数据库表名

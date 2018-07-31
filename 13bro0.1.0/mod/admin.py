@@ -3,8 +3,9 @@ from django.contrib import admin
 from mod.models import User, Category, Article
 
 
+# 创建管理后台的文章管理类型，包含显示内容、搜索内容，并加入富文本编辑器
 class ArtAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content', 'status', 'create_time', 'last_mod_time',
+    list_display = ('title', 'category', 'create_time', 'last_mod_time',
                     'pub_time')
     search_fields = ('title', 'content')
 

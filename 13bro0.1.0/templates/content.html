@@ -6,6 +6,16 @@
 {% endblock %}
 
 {% block content %}
+<!--单独写一个ajax，异步获取url相关的方法，来实现点赞功能-->
+<script type="text/javascript">
+    function zan() {
+        <!--get获取名称为good的url-->
+        $.get('/good/{{ art.id }}', function (data) {
+            <!--修改#后面标签的相关值-->
+            $('#diggnum').html(data.result)
+        })
+    }
+</script>
 <article>
     <h1 class="t_nav">
         <a href="/">您现在的位置是：首页 > 文章详情 > {{ art.title }}</a>
@@ -15,10 +25,14 @@
         <div class="bloginfo">
         <ul>
             <li class="author"><a href="/">十三哥</a></li>
+            <!--所属类别-->
             <li class="lmname"><a href="/">{{ art.category }}</a></li>
+            <!--创建时间-->
             <li class="timer">{{ art.create_time }}</li>
+            <!--获取art的浏览量并显示-->
             <li class="view">{{ art.views }}</li>
-            <li class="like">8888</li>
+            <!--获取art的点赞数并显示-->
+            <li class="like">{{ art.gcount }}</li>
         </ul>
         </div>
         <br>
@@ -26,18 +40,21 @@
         <div class="news_con">
             <img alt="" src="/static/{{ art.picture }}"><br>
             <br>
-            {{ art.content|safe }}  <!--safe过滤器可以将样式效果加载出来-->
+            {{ art.content|safe }}  <!--safe过滤器可以将富文本的样式效果加载出来-->
         </div>
     </div>
     <div class="share">
         <p class="diggit">
-            <a href="JavaScript:makeRequest"> 很赞哦！</a>
-            (<b id="diggnum"><script type="text/javascript" src="/e/public/ViewClick/?classid=2&id=20&down=5"></script>13</b>)
+            <!--href是为了显示鼠标的手指样式；onclick调用上面的js函数-->
+            <a href="javascript:" onclick="zan({{ art.id }});" class="button">赞一下</a>
+            <!--显示已赞的数量-->
+            (<b id="diggnum">{{ art.good_count }}</b>)
         </p>
     </div>
+    <!--增加上一篇和下一篇的链接-->
     <div class="nextinfo">
-      <p>上一篇：<a href="/news/life/2018-03-13/804.html">作为一个设计师,如果遭到质疑你是否能恪守自己的原则?</a></p>
-      <p>下一篇：<a href="/news/life/">返回列表</a></p>
+        <p>上一篇：<a href="/content/{{ last.id }}">{{ last.title }}</a></p>
+        <p>下一篇：<a href="/content/{{ next.id }}">{{ next.title }}</a></p>
     </div>
 </article>
 {% endblock %}

@@ -14,18 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 from mod import views
 
 urlpatterns = [
     path('', views.index),
     path('share/', views.share),
-    path('list/', views.list),
+    path('essay/', views.essay),
     path('time/', views.time),
     path('about/', views.about),
     path('gbook/', views.gbook),
-    path('content/<int:no>', views.content),
+    path('content/<int:no>', views.content),  # 针对内容页的映射链接
+    path('good/<int:no>/', views.make_good_comment),  # 针对点赞功能的映射链接
     # path('mod', include('mod.urls', namespace='mod')),
     path('admin/', admin.site.urls)
 ]

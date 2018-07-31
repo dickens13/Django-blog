@@ -17,8 +17,10 @@
     <div class="picsbox">
         <div class="banner">
             <div id="banner" class="fader">
+                <!--遍历后挨个取出-->
                 {% for art in b_art %}
-                    {% if forloop.counter < 10 %}
+                    <!--banner显示小于15个-->
+                    {% if forloop.counter < 15 %}
                         <li class="slide" >
                             <a href="/content/{{ art.id }}" target="_blank">
                             <img src="/static/{{ art.picture }}">
@@ -36,6 +38,7 @@
         </div>
         <div class="toppic">
             <li>
+                <!--通过下标id取出相关文章的参数-->
                 <a href="/content/{{ h_art.0.id }}" target="_blank">
                     <i><img src="/static/{{ h_art.0.picture }}"></i>
                     <h2>{{ h_art.0.title }}</h2>
@@ -43,6 +46,7 @@
                 </a>
             </li>
             <li>
+                <!--通过下标id取出相关文章的参数-->
                 <a href="/content/{{ h_art.1.id }}" target="_blank">
                     <i><img src="/static/{{ h_art.1.picture }}"></i>
                     <h2>{{ h_art.1.title }}</h2>
