@@ -100,3 +100,13 @@ class Article(models.Model):
         verbose_name_plural = '文章列表'  # 指定后台显示模型负数名称
         db_table = 'article'  # 数据库表名
         get_latest_by = 'created_time'
+
+
+# 点赞函数建模，包含IP地址、关联文章、浏览时间
+class Poll(models.Model):
+    ip = models.CharField(max_length=100, null=True, blank=True)
+    art = models.ForeignKey(Article, on_delete=models.CASCADE)
+    click_time = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return str(self.art)

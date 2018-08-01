@@ -1,10 +1,12 @@
 import json
+import pytz
+from datetime import datetime
 
 from django.core.paginator import Paginator, EmptyPage
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
-from mod.models import Article
+from mod.models import Article, Poll
 
 
 # 主页的视图函数，分成两类显示，以关联类型的id来分类
@@ -77,11 +79,44 @@ def content(request, no):  # 用传入no的方式获取文章
     return render(request, 'content.html', posts)
 
 
+# 获取ip的方法
+def get_ip(request):
+    # META自带的HTTP_X_FORWARDED_FOR可以获取真实IP地址
+    if 'HTTP_X_FORWARDED_FOR' in request.META:
+        return request.META['HTTP_X_FORWARDED_FOR']
+    # REMOTE_ADDR是代理前的IP地址
+    else:
+        return request.META['REMOTE_ADDR']
+
+
 # 显示点赞的函数
 def make_good_comment(request, no):
     art = Article.objects.get(pk=no)  # 用传入no的方式获取文章
-    art.good_count += 1  # 点赞之后数量加1
-    art.save()  # 存入数据库
-    ctx = {'code': 200, 'result': f'{art.good_count}'}
-    return HttpResponse(json.dumps(ctx),
-                        content_type='application/json; charset=utf-8')
+    ip = get_ip(request)
+    poll = Poll.objects.filter(ip=ip, art=art).first()
+    # 如果访问ip存在，就进行时间计算
+    if poll:
+        # 将现在的时间转换为utc以便跟click_time做比较，同一时区才能加减
+        now_time = datetime.now(pytz.utc)
+        diff_time = now_time - poll.click_time
+        # 如果访问时间差超过2分钟，则可以点赞并+1
+        if diff_time.seconds > 120:
+            poll.art.good_count += 1
+            # 刷新点击的初始时间，以备下一次计算
+            # 必须先刷新时间，后进行次数更新，否则报错
+            poll.click_time = datetime.now()
+            poll.save()  # 存入数据库
+            ctx = {'code': 200, 'result': f'{poll.art.good_count}'}
+            return HttpResponse(json.dumps(ctx),
+                                content_type='application/json; charset=utf-8')
+        # 如没超过2分钟则弹出提示
+        else:
+            return JsonResponse({'result1': 'ok'})  # 返回json数据以便前端接收
+    # 如果访问ip不存在，则允许点赞
+    else:
+        Poll.objects.create(ip=ip, art=art, click_time=datetime.now())  # 获取
+        art.good_count += 1  # 点赞之后数量加1
+        art.save()  # 存入数据库
+        ctx = {'code': 200, 'result': f'{art.good_count}'}
+        return HttpResponse(json.dumps(ctx),
+                            content_type='application/json; charset=utf-8')

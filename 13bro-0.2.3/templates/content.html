@@ -12,7 +12,14 @@
         <!--get获取名称为good的url-->
         $.get('/good/{{ art.id }}', function (data) {
             <!--修改#后面标签的相关值-->
-            $('#diggnum').html(data.result)
+            <!--如果结果是正常则执行-->
+            if(data.result) {
+                $('#diggnum').html(data.result)
+            }
+            <!--如果结果是另一种则弹窗提示-->
+            if(data.result1){
+                alert("赞得太快了，休息一会吧！");
+            }
         })
     }
 </script>
@@ -50,6 +57,12 @@
             <!--显示已赞的数量-->
             (<b id="diggnum">{{ art.good_count }}</b>)
         </p>
+    </div>
+    <div class="news_pl">
+        <h2>文章评论</h2>
+        <ul>
+        <div class="gbko"> </div>
+        </ul>
     </div>
     <!--增加上一篇和下一篇的链接-->
     <div class="nextinfo">
