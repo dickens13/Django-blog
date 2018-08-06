@@ -1,0 +1,37 @@
+{% extends 'base_s.html' %}  {#单独继承一个基模板，主要是为了导航栏显示问题。#}
+{% load static %}
+
+{% block title %}
+    搜索页_十三哥博客
+{% endblock %}
+
+{% block content %}
+    <article>
+    <h1 class="t_nav">
+        <a href="/">您现在的位置是：首页 > 搜索页 > 相关文章</a>
+    </h1>
+    {% if error_msg %}
+    <p>{{ error_msg }}</p>
+    {% endif %}
+
+    <div class="share">
+        <ul>
+            {% for post in post_list %}
+                <li>
+                    <div class="shareli">
+                        <a href="/content/{{ post.id }}" target="_blank">
+                            <i><img src="/static/{{ post.picture }}"></i>
+                            <h2><b>{{ post.title }}</b></h2>
+                        </a>
+                    </div>
+                </li>
+            <!--如果没有符合条件的文章-->
+            {% empty %}
+                <div class="share">
+                    没有搜索到符合条件的文章
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
+    </article>
+{% endblock %}

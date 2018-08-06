@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="个人博客,十三哥个人博客,十三哥,成都十三哥" />
+    <meta name="description" content="十三哥个人博客，十三哥个人原创网站。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/base.css'%}" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/m.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.easyfader.min.js' %}"></script>
+    <script src="{% static 'js/scrollReveal.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+{#    [if lt IE 9]#}
+{#    <script src="{% static 'js/modernizr.js' %}"></script>#}
+{#    [endif]#}
+</head>
+<body>
+    <header>
+{#        &nbsp#}
+        <!--menu begin-->
+        <div class="menu">
+            <nav class="nav" id="topnav">
+                <h1 class="logo"><a href="http://www.13bro.com">十三哥博客</a></h1>
+                <li><a href="/">网站首页</a> </li>
+                <li><a href="/share/">日常博客</a></li>
+                <li><a href="/essay/">胡言乱语</a></li>
+                <li><a href="/study/">见贤思齐</a> </li>
+                <li><a href="/time/">时间轴</a> </li>
+                <li><a href="/about/">关于我</a> </li>
+                <!--search begin-->
+                <div id="search_bar" class="search_bar">
+                    <!--必须由action的设定，才能跳转和调用视图函数-->
+                    <form  id="searchform" action="/search/" method="post" name="searchform">
+                        <input class="input" placeholder="想搜点什么呢..." type="text" name="keyboard" id="keyboard">
+                        <input type="hidden" name="show" value="title" />
+                        <input type="hidden" name="tempid" value="1" />
+                        <input type="hidden" name="tbname" value="news">
+                        <input type="hidden" name="Submit" value="搜索" />
+                        <span class="search_ico"></span>
+                    </form>
+                </div>
+                <!--search end-->
+            </nav>
+        </div>
+        <!--menu end-->
+        <!--mnav begin-->
+        <div id="mnav">
+            <h2><a href="http://www.13bro.com" class="mlogo">十三哥博客</a><span class="navicon"></span></h2>
+            <dl class="list_dl">
+                <dt class="list_dt"> <a href="">网站首页</a> </dt>
+                <dt class="list_dt"> <a href="/share/">日常博客</a> </dt>
+                <dt class="list_dt"> <a href="/essay/">胡言乱语</a> </dt>
+                <dt class="list_dt"> <a href="/study/">见贤思齐</a> </dt>
+                <dt class="list_dt"> <a href="/time/">时间轴</a> </dt>
+                <dt class="list_dt"> <a href="/about/">关于我</a> </dt>
+            </dl>
+        </div>
+        <!--mnav end-->
+    </header>
+    {% block content %}
+
+    {%  endblock %}
+<footer>
+            <p>Design by
+            <a href="http://www.13bro.com" target="_blank">十三哥博客</a>&nbsp;&nbsp;&nbsp;
+            <a href="/">蜀ICP备18020635号</a>&nbsp;&nbsp;&nbsp;
+            <a href="/" target="_blank">
+                <span>联系邮箱:</span>156879457@qq.com
+            </a>
+        </p>
+</footer>
+<!--返回按钮-->
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>
