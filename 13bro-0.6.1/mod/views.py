@@ -12,17 +12,17 @@ from mod.models import Article, Poll, Comments
 
 # 主页的视图函数，分成两类显示，以关联类型的id来分类
 def index(request):
-    b_art = Article.objects.filter(category_id=1)
-    h_art = Article.objects.filter(category_id=2)
-    j_art = Article.objects.filter(category_id=3)
+    b_art = Article.objects.filter(category_id=1).order_by('create_time')
+    h_art = Article.objects.filter(category_id=2).order_by('pub_time')
+    j_art = Article.objects.filter(category_id=3).order_by('pub_time')
     posts = {'b_art': b_art, 'h_art': h_art, 'j_art': j_art}
     return render(request, 'index.html', posts)
 
 
 # 博客页面的视图函数
 def share(request):
-    b_art = Article.objects.filter(category_id=1)
-    paginator = Paginator(b_art, 4, 1)  # 每页显示8条,少于1条合并到上一页
+    b_art = Article.objects.filter(category_id=1).order_by('create_time')
+    paginator = Paginator(b_art, 8, 2)  # 每页显示8条,少于1条合并到上一页
     page = request.GET.get('page', 1)  # 获取url中page参数的值，1为默认值
     try:
         post_list = paginator.page(page)
@@ -33,8 +33,8 @@ def share(request):
 
 # 其他文章页面的视图函数
 def essay(request):
-    h_art = Article.objects.filter(category_id=2)
-    paginator = Paginator(h_art, 4, 1)  # 每页显示8条,少于1条合并到上一页
+    h_art = Article.objects.filter(category_id=2).order_by('create_time')
+    paginator = Paginator(h_art, 8, 2)  # 每页显示8条,少于1条合并到上一页
     page = request.GET.get('page', 1)  # 获取url中page参数的值
     try:
         post_list = paginator.page(page)
@@ -44,8 +44,8 @@ def essay(request):
 
 
 def study(request):
-    s_art = Article.objects.filter(category_id=3)
-    paginator = Paginator(s_art, 4, 1)  # 每页显示8条,少于1条合并到上一页
+    s_art = Article.objects.filter(category_id=3).order_by('create_time')
+    paginator = Paginator(s_art, 8, 2)  # 每页显示8条,少于1条合并到上一页
     page = request.GET.get('page', 1)  # 获取url中page参数的值
     try:
         post_list = paginator.page(page)
@@ -56,8 +56,8 @@ def study(request):
 
 # 时间轴的视图函数
 def time(request):
-    art = Article.objects.all()
-    paginator = Paginator(art, 20, 5)  # 每页显示8条,少于1条合并到上一页
+    art = Article.objects.all().order_by('pub_time')
+    paginator = Paginator(art, 20, 4)  # 每页显示8条,少于1条合并到上一页
     page = request.GET.get('page', 1)
     try:
         post_list = paginator.page(page)
@@ -132,7 +132,7 @@ def make_good_comment(request, no):
                             content_type='application/json; charset=utf-8')
 
 
-# 评论存储的方法
+# 评论的视图函数
 def comments(request, no):
     if request.method == 'POST':  # 如果有请求调用本函数时(即前端进行评论提交时)
         art = Article.objects.get(pk=no)

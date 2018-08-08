@@ -68,7 +68,7 @@ class Article(models.Model):
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     pub_time = models.DateTimeField(verbose_name='发布时间', blank=True, null=True)
     last_mod_time = models.DateTimeField(verbose_name='修改时间', default=now)
-    picture = models.ImageField(verbose_name='图片', upload_to='images', blank=True)
+    picture = models.ImageField(verbose_name='图片', upload_to='images/artpic', blank=True)
     category = models.ForeignKey(Category, verbose_name='所属分类', on_delete=models.CASCADE,
                                  default=None, blank=False, null=False)
     # 设定一个点赞的字段，限定显示数量等
@@ -95,7 +95,7 @@ class Article(models.Model):
         return Article.objects.filter(id__lt=self.id, status='p', pub_time__isnull=False).first()
 
     class Meta:
-        ordering = ['-last_mod_time']  # 按修改时间降序
+        ordering = ['create_time']  # 按发布时间降序
         verbose_name = '文章'  # 指定后台显示的模型名称
         verbose_name_plural = '文章列表'  # 指定后台显示模型负数名称
         db_table = 'article'  # 数据库表名
