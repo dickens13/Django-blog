@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f56cb9c4-124b-4537-bf8d-f04e7dc09c5b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/b05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/b07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner03_Ebsghx6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner03_JhD123Z.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner03_bTbDs8k.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/banner03_jglRgZ9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/django.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/louxia.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/text01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/text02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/toppic02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/v2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/wife.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/wkz.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/wkz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/images/zd02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/myblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/13bro-0.6.1/myblog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/myblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/13bro-0.6.1/myblog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/13bro-0.6.1/static/images/》》》》》2018 - 快捷方式.lnk" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/13bro-0.6.1/myblog/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/13bro-0.6.1/mod/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/13bro-0.6.1/myblog/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="787" />
+    <option name="y" value="42" />
+    <option name="width" value="581" />
+    <option name="height" value="583" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="个人博客" type="b2602c69:ProjectViewProjectNode" />
+              <item name="个人博客" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="个人博客" type="b2602c69:ProjectViewProjectNode" />
+              <item name="个人博客" type="462c0819:PsiDirectoryNode" />
+              <item name="13bro-0.6.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="个人博客" type="b2602c69:ProjectViewProjectNode" />
+              <item name="个人博客" type="462c0819:PsiDirectoryNode" />
+              <item name="13bro-0.6.1" type="462c0819:PsiDirectoryNode" />
+              <item name="mod" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/13bro/myblog/settings.py" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f56cb9c4-124b-4537-bf8d-f04e7dc09c5b" name="Default" comment="" />
+      <created>1534730954816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534730954816</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="SciView" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://D:/13bro/myblog/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="127" column="22" lean-forward="true" selection-start-line="126" selection-end-line="127" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/13bro-0.6.1/mod/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/13bro-0.6.1/myblog/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="120" column="13" lean-forward="true" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
