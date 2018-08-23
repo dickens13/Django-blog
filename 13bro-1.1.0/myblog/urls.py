@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.static import serve
 
 from mod import views
-from myblog.settings import STATICFILES_DIRS
 
 urlpatterns = [
     path('', views.index),
@@ -31,7 +29,6 @@ urlpatterns = [
     path('good/<int:no>/', views.make_good_comment),  # 针对点赞功能的映射链接
     path('comment/<int:no>/', views.comments),
     path('search/', views.search),  # 针对搜索功能的映射链接
-    path('static/<path>', serve, {"document_root": STATICFILES_DIRS[0]}),
     # path('mod', include('mod.urls', namespace='mod')),
     path('admin/', admin.site.urls)
 ]
